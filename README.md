@@ -1,76 +1,94 @@
-# TKI Dashboard - Seu Próprio Gateway
-## Código-Fonte Completo | Open Source
+<p align="center">
+  <img src="docs/banner.png" alt="TKI Dashboard - Seu próprio gateway de pagamentos" width="100%">
+</p>
 
-Uma dashboard profissional e completa desenvolvida em **React com Recharts**, baseada no design do TKI TECNOLOGIA.
+<h1 align="center">💳 TKI Dashboard — Seu Próprio Gateway</h1>
 
----
+<p align="center">
+  Dashboard de um <b>gateway de pagamentos</b> feita em <b>React com Recharts</b>: saldo, gráfico de tendência,
+  métricas operacionais, transações, split de pagamentos, recebedores, conexões de API e multiadquirência.
+</p>
 
-## 📊 Características
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18">
+  <img src="https://img.shields.io/badge/Recharts-2-22B5BF?style=for-the-badge" alt="Recharts">
+  <img src="https://img.shields.io/badge/Vite-4-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 4">
+  <img src="https://img.shields.io/badge/JavaScript-JSX-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript (JSX)">
+</p>
 
-✅ **Interface Moderna e Responsiva**
-- Design dark mode elegante
-- Sidebar navegável com 9 seções
-- Layout fluido e profissional
-
-✅ **Dados em Tempo Real (Simulados)**
-- Saldo disponível com tendências
-- Gráficos de área com histórico de 35 dias
-- Transações recentes com detalhes
-- Split de pagamentos com visualização em pizza
-
-✅ **Componentes Avançados**
-- Gráficos animados com Recharts
-- Métricas operacionais em tempo real
-- Tabelas interativas
-- Status badges com cores semânticas
-- Tooltips informativos
-
-✅ **Funcionalidades Completas**
-- Dashboard com visão geral completa
-- Seções para Transações, Recebedores, API
-- Multiadquirência integrada
-- Sistema de CTA (Call-to-Action)
-- Perfil de usuário na sidebar
-
-✅ **Código Profissional**
-- Estrutura limpa e modular
-- Comentários explicativos
-- Estilos organizados e reutilizáveis
-- Performance otimizada
-- Acessibilidade melhorada
+<p align="center">
+  <a href="#-sobre-o-projeto">Sobre</a> •
+  <a href="#-funcionalidades">Funcionalidades</a> •
+  <a href="#-telas">Telas</a> •
+  <a href="#-como-executar">Como executar</a> •
+  <a href="#-customização">Customização</a> •
+  <a href="#-estrutura-do-projeto">Estrutura</a> •
+  <a href="#-roadmap">Roadmap</a>
+</p>
 
 ---
 
-## 🚀 Como Usar
+## 📌 Sobre o projeto
 
-### Opção 1: HTML Simples (Recomendado para Começar)
+Uma dashboard completa para quem quer ter **o próprio gateway de pagamentos**, desenvolvida em **React com
+Recharts** e baseada no design da TKI Tecnologia. Toda a interface está num único componente,
+[`TKI_Dashboard_Completa.jsx`](TKI_Dashboard_Completa.jsx), com os estilos organizados em um objeto JavaScript.
 
-1. **Abra o arquivo diretamente:**
+> ⚠️ **Dados demonstrativos.** Todos os valores mostrados são simulados (definidos no início do componente),
+> não contêm informações reais e servem para desenvolvimento e apresentação.
+
+## ✨ Funcionalidades
+
+| | Recurso | Descrição |
+|---|---|---|
+| 💰 | **Saldo disponível** | Valor atual, variação em relação ao dia anterior e status da operação |
+| 📈 | **Saldo ao longo do tempo** | Gráfico de área (Recharts) com tooltip, cobrindo os últimos 35 dias |
+| ⚡ | **Métricas operacionais** | Transações, taxa de aprovação, tempo médio e disponibilidade |
+| 🧾 | **Transações recentes** | Pix, cartão e boleto; clicar numa transação mostra a taxa e o ID |
+| 🎯 | **Split de pagamentos** | Gráfico de pizza com a divisão entre recebedor principal, parceiro e afiliado |
+| 👥 | **Recebedores** | Percentual, valor e status de cada recebedor configurado |
+| 🔗 | **Conexões de API** | Pix, cartões e webhooks com requisições e erros |
+| 🏪 | **Multiadquirência** | Volume e status por adquirente |
+| 🧭 | **Menu lateral** | 9 seções com ícones, indicador de página ativa e perfil do usuário |
+| 📣 | **Chamada para ação** | Bloco "Pronto para integrar?" com botão de apresentação |
+
+> As seções do menu além da **Visão Geral** ainda mostram o aviso "Seção em desenvolvimento" com um botão para
+> voltar ao dashboard.
+
+## 🖼️ Telas
+
+<table>
+  <tr>
+    <td align="center"><b>Visão geral</b><br><img src="docs/screenshots/visao_geral.png" alt="Visão geral"></td>
+    <td align="center"><b>Transações e split</b><br><img src="docs/screenshots/transacoes_split.png" alt="Transações e split de pagamentos"></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><b>Recebedores, API e multiadquirência</b><br><img src="docs/screenshots/integracoes.png" alt="Recebedores, conexões de API e multiadquirência" width="640"></td>
+  </tr>
+</table>
+
+## 🚀 Como executar
+
+**Pré-requisito:** Node.js 14.18+ / 16+ (exigido pelo Vite 4).
+
 ```bash
-# No seu navegador, abra:
-./index.html
-```
-
-Pronto! A dashboard funciona imediatamente sem necessidade de instalação.
-
-### Opção 2: React + Vite (Para Desenvolvimento)
-
-1. **Instale as dependências:**
-```bash
+git clone https://github.com/kauaxp77/Dashboard_gateway.git
+cd Dashboard_gateway
 npm install
-```
-
-2. **Inicie o servidor de desenvolvimento:**
-```bash
 npm run dev
 ```
 
-3. **Compile para produção:**
+Para gerar a versão de produção (pasta `dist/`) e conferir o resultado:
+
 ```bash
 npm run build
+npm run preview
 ```
 
-### Opção 3: Importar o Componente em um Projeto Existente
+> O `index.html` é a página de entrada do Vite: ele carrega `src/main.jsx` e precisa do `npm run dev` (ou do
+> build) para funcionar. Abrir o arquivo direto no navegador não mostra a dashboard.
+
+### Importar o componente em um projeto existente
 
 ```jsx
 import TKIDashboard from './TKI_Dashboard_Completa.jsx';
@@ -82,25 +100,13 @@ function App() {
 export default App;
 ```
 
----
-
-## 📁 Arquivos Inclusos
-
-```
-├── index.html                    # Dashboard pronta para usar (abrir no navegador)
-├── TKI_Dashboard_Completa.jsx   # Componente React completo
-├── package.json                  # Dependências do projeto
-├── README.md                     # Este arquivo
-└── docs/                         # Documentação adicional
-```
-
----
+O projeto que importar o componente precisa ter `react`, `react-dom` e `recharts` instalados.
 
 ## 🎨 Customização
 
-### Alterar Cores
+### Alterar cores
 
-Edite os valores nas cores principais no arquivo JSX:
+Edite os valores das cores principais no arquivo JSX:
 
 ```javascript
 // Cores principais
@@ -111,12 +117,12 @@ Edite os valores nas cores principais no arquivo JSX:
 #1baf7a  // Teal
 ```
 
-### Adicionar Dados Reais
+### Adicionar dados reais
 
-Substitua os dados mock por chamadas a API:
+Substitua os dados simulados por chamadas a uma API:
 
 ```javascript
-// Antes (mock)
+// Antes (dados simulados)
 const recentTransactions = [
   { id: 1, name: 'Pagamento Pix', value: 1250.00, ... }
 ];
@@ -131,77 +137,56 @@ useEffect(() => {
 }, []);
 ```
 
-### Adicionar Novas Seções
+### Adicionar novas seções
 
 1. Adicione um novo item ao `menuItems`:
+
 ```javascript
-{ id: 'nuevaseccion', label: 'Minha Seção', icon: '🎯' }
+{ id: 'novasecao', label: 'Minha Seção', icon: '🎯' }
 ```
 
-2. Adicione conteúdo no renderizador:
+2. Adicione o conteúdo no renderizador:
+
 ```javascript
-{activePage === 'nuevaseccion' && (
+{activePage === 'novasecao' && (
   <div>
     {/* seu conteúdo aqui */}
   </div>
 )}
 ```
 
----
+### Componentes reutilizáveis
 
-## 📈 Funcionalidades Principais
+- `MetricCard`: cards de métrica
+- `TransactionCard`: cards de transação (com detalhes ao clicar)
+- Gráficos Recharts customizados (`AreaChart` e `PieChart`)
 
-### Dashboard (Página Inicial)
-- 💰 Saldo disponível em tempo real
-- 📊 Gráfico de tendências (35 dias)
-- 🔧 Status operacional do sistema
-- ⚡ Métricas de performance
-- 💳 Transações recentes
-- 🎯 Split de pagamentos
-- 👥 Recebedores configurados
-- 🔗 Conexões de API
-- 🏪 Multiadquirência
+## 🔐 Segurança
 
-### Menu Lateral
-- Navegação entre 9 seções
-- Ícones descritivos
-- Indicador de página ativa
-- Perfil do usuário
+Para levar a dashboard para produção com dados reais:
 
-### Componentes Reutilizáveis
-- `MetricCard` - Cards de métrica
-- `TransactionCard` - Cards de transação
-- Gráficos Recharts customizados
+- implemente autenticação;
+- valide os dados no backend;
+- use HTTPS sempre;
+- sanitize a entrada do usuário.
 
----
+## 📁 Estrutura do projeto
 
-## 🔧 Dependências
-
-```json
-{
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "recharts": "^2.10.3"
-}
 ```
-
-**Nota:** O arquivo `index.html` usa CDN, não requer instalação!
-
----
-
-## 📱 Responsividade
-
-A dashboard é totalmente responsiva:
-- ✅ Desktop (1920px+)
-- ✅ Tablet (768px - 1024px)
-- ✅ Mobile (320px - 767px)
-
-Grid dinâmico com `auto-fit` e `minmax`
-
----
+Dashboard_gateway/
+├── TKI_Dashboard_Completa.jsx   # Componente React completo (dados simulados, layout e estilos)
+├── src/
+│   └── main.jsx                 # Monta o componente na página
+├── index.html                   # Página de entrada do Vite
+├── docs/                        # Banner e capturas de tela deste README
+├── package.json                 # Dependências e scripts
+└── package-lock.json
+```
 
 ## 🎯 Roadmap
 
+- [ ] Implementar as seções do menu além da Visão Geral
+- [ ] Layout para celular (hoje o menu lateral tem largura fixa e a dashboard é pensada para desktop)
 - [ ] Integração com APIs reais
 - [ ] Dark mode toggle
 - [ ] Exportação de relatórios (PDF/Excel)
@@ -211,97 +196,15 @@ Grid dinâmico com `auto-fit` e `minmax`
 - [ ] Tema customizável
 - [ ] PWA (Progressive Web App)
 
----
+## 🛠️ Tecnologias
 
-## 🔐 Segurança
+- **React 18**: interface em um único componente
+- **Recharts**: gráficos de área e de pizza
+- **Vite 4**: servidor de desenvolvimento e build
+- **Intl.NumberFormat**: valores formatados em reais (pt-BR)
 
-**Dados Demonstrativos:**
-- Todos os valores mostrados são simulados
-- Não contêm informações reais
-- Adequados apenas para desenvolvimento
+## 👨‍💻 Autor
 
-**Para Produção:**
-- Implemente autenticação
-- Valide dados no backend
-- Use HTTPS sempre
-- Sanitize entrada do usuário
+Desenvolvido por **[kauaxp77](https://github.com/kauaxp77)**
 
----
-
-## 💡 Dicas de Uso
-
-### 1. Performance
-```javascript
-// Use React.memo para componentes pesados
-const MetricCard = React.memo(({ label, value }) => (
-  // conteúdo
-));
-```
-
-### 2. Debugging
-```javascript
-// Ative logs de desenvolvimento
-console.log('Estado ativo:', activePage);
-console.log('Transações:', recentTransactions);
-```
-
-### 3. Animações
-```css
-transition: all 0.2s ease;
-```
-
----
-
-## 📞 Suporte
-
-Para dúvidas ou sugestões:
-1. Verifique a documentação
-2. Consulte os comentários no código
-3. Revise exemplos no README
-
----
-
-## 🙏 Créditos
-
-Desenvolvido com:
-- ⚛️ React 18
-- 📊 Recharts
-- 🎨 Design System Customizado
-- 💙 Muito café ☕
-
----
-
-## 📸 Screenshots
-
-### Dashboard Principal
-```
-┌─────────────────────────────────────────────┐
-│ Sidebar │ Header "Seu Próprio Gateway"      │
-│         ├─────────────────────────────────┤
-│ Menu    │ Saldo: R$ 2.458.750,32           │
-│         │ Gráfico de Tendências (35 dias)  │
-│         ├─────────────────────────────────┤
-│         │ Transações | Split | Recebedores │
-│         ├─────────────────────────────────┤
-│         │ API Connections | Multiadquirência
-│         ├─────────────────────────────────┤
-│         │ CTA: Solicitar apresentação      │
-└─────────────────────────────────────────────┘
-```
-
----
-
-## ✨ Configuração Final
-
-Nenhuma configuração necessária! Basta:
-
-1. **Opção HTML:** Abrir `index.html` no navegador
-2. **Opção React:** Executar `npm install && npm run dev`
-
-Pronto para usar! 🎉
-
----
-
-**Última atualização:** Fevereiro 2025  
-**Versão:** 1.0.0  
-**Status:** ✅ Pronto para Produção
+<p align="center">⭐ Se curtiu o projeto, deixe uma estrela!</p>
