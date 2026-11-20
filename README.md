@@ -261,12 +261,6 @@ Para dúvidas ou sugestões:
 
 ---
 
-## 📄 Licença
-
-Código aberto para uso pessoal, acadêmico e comercial.
-
----
-
 ## 🙏 Créditos
 
 Desenvolvido com:
